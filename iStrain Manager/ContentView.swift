@@ -11,32 +11,47 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    
+    @AppStorage("didLaunchBefore") var didLaunchBefore: Bool = false;
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
+        VStack {
+
+
+            NavigationStack {
+                        
+                Header()
+                
+                WelcomeBanner(hasOpenedBefore: didLaunchBefore)
+
+                Spacer()
+                
+                Group {
+                    
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        EmptyView()
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Label("Analytics", systemImage: "chart.bar.xaxis.ascending")
+                    } .simultaneousGesture(TapGesture().onEnded(pressedButton))
+                        .buttonStyle(.bordered)
+                    
+                    NavigationLink {
+                        TimerPage()
+                    } label: {
+                        Text("Start Session")
                     }
+                    .buttonStyle(.borderedProminent)
+                    .simultaneousGesture(TapGesture().onEnded(pressedButton))
                 }
-                .onDelete(perform: deleteItems)
+                
+                Spacer()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+            
         }
+    }
+    
+    private func pressedButton() {
+        didLaunchBefore = true;
     }
 
     private func addItem() {
