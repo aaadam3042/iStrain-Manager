@@ -7,17 +7,47 @@
 
 import SwiftUI
 
+enum TimerState {
+    case Work
+    case Rest
+    case Active
+}
+
+class StateColours {
+    static func getColor(state: TimerState) -> Color {
+        switch state {
+        case .Work:
+            return Color.gray;
+        case .Rest:
+            return Color.green;
+        case .Active:
+            return Color.yellow;
+        case _:
+            return Color.pink;
+        }
+    }
+}
+
+let WORK_LENGTH: Int = (60*20);
+let REST_LENGTH: Int = (20);
+let ACTIVE_LENTH: Int = (0);
+
 struct TimerPage: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.scenePhase) var scenePhase
+    @State private var isActive = true
+    
     @State var isPaused = false;
+    @State var sessionState = TimerState.Work
+    
+    @State var timeRemaining: Int = WORK_LENGTH;
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         let pauseMessage = isPaused ? "Resume" : "Pause"
         
         VStack {
             Header()
-            
-            
             
             VStack {
                 Text("Cycle {X}")
@@ -35,12 +65,12 @@ struct TimerPage: View {
                     Spacer()
                 }
                 
-                Text("00:00")
-                    .font(.system(size:105))
+            ClockFace(seconds: $timeRemaining)
+                
             }
             
             Group {
-                Text("Work")
+                Text("\(sessionState)")
             }.font(.title)
             
             Spacer()
@@ -67,16 +97,39 @@ struct TimerPage: View {
             }
             Spacer()
         }
-        .background(.green)
+        .background(StateColours.getColor(state: sessionState))
         .navigationBarBackButtonHidden(true)
+        .onReceive(timer){ _ in
+            guard isActive && !isPaused else {return}
+            
+            if timeRemaining > 0 {
+                timeRemaining -= 1;
+            } else if timeRemaining == 0 {
+                
+            }
+        }
+        .onChange(of: scenePhase) {
+            if scenePhase == .active {
+                isActive = true
+            } else {
+                isActive = false
+            }
+        }
+        .onAppear() {
+            UIApplication.shared.isIdleTimerDisabled = true;
+        }
+        .onDisappear() {
+            UIApplication.shared.isIdleTimerDisabled = false;
+        }
     }
     
     private func pauseAction() {
-        isPaused.toggle()
+        isPaused.toggle();
     }
     
     private func stopAction() {
-        presentationMode.wrappedValue.dismiss()
+        presentationMode.wrappedValue.dismiss();
+        timeRemaining = WORK_LENGTH;
     }
     
 }
