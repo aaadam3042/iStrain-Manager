@@ -47,12 +47,11 @@ struct TimerPage: View {
         let pauseMessage = isPaused ? "Resume" : "Pause"
         
         VStack {
-            Header()
             
             VStack {
                 Text("Cycle {X}")
                 Text("Round {X}")
-            }.font(.title).fontWeight(.bold)
+            }.padding(.top, 20.0).font(.title).fontWeight(.bold)
             
             Spacer()
             
@@ -105,7 +104,7 @@ struct TimerPage: View {
             if timeRemaining > 0 {
                 timeRemaining -= 1;
             } else if timeRemaining == 0 {
-                
+                // TODO: Add state logic here - add cycle and round - make env var lengths
             }
         }
         .onChange(of: scenePhase) {
