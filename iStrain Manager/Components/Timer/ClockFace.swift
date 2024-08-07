@@ -21,6 +21,14 @@ struct ClockFace: View {
         let sec2 = String(second%10);
         
         HStack {
+            Spacer()
+            Text("Minutes")
+            Spacer()
+            Text("Seconds")
+            Spacer()
+        }
+        
+        HStack {
             Group {
                 Text(min1)
                 Text(min2)

@@ -16,6 +16,7 @@
 		93C8B4CC2C51B43A0020F89C /* WelcomeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4CB2C51B43A0020F89C /* WelcomeBanner.swift */; };
 		93C8B4CF2C51DFAA0020F89C /* TimerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4CE2C51DFAA0020F89C /* TimerPage.swift */; };
 		93C8B4D42C56188C0020F89C /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4D32C56188C0020F89C /* ClockFace.swift */; };
+		93C8B4D72C56390C0020F89C /* SessionLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4D62C56390C0020F89C /* SessionLabels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		93C8B4CB2C51B43A0020F89C /* WelcomeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeBanner.swift; sourceTree = "<group>"; };
 		93C8B4CE2C51DFAA0020F89C /* TimerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPage.swift; sourceTree = "<group>"; };
 		93C8B4D32C56188C0020F89C /* ClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
+		93C8B4D62C56390C0020F89C /* SessionLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionLabels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +85,9 @@
 		93C8B4C82C51B2450020F89C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				93C8B4D52C5638C80020F89C /* Timer */,
 				93C8B4C92C51B25C0020F89C /* Header.swift */,
 				93C8B4CB2C51B43A0020F89C /* WelcomeBanner.swift */,
-				93C8B4D32C56188C0020F89C /* ClockFace.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -96,6 +98,15 @@
 				93C8B4CE2C51DFAA0020F89C /* TimerPage.swift */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		93C8B4D52C5638C80020F89C /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				93C8B4D32C56188C0020F89C /* ClockFace.swift */,
+				93C8B4D62C56390C0020F89C /* SessionLabels.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 				93C8B4BB2C50CD2C0020F89C /* ContentView.swift in Sources */,
 				93C8B4D42C56188C0020F89C /* ClockFace.swift in Sources */,
 				93C8B4BD2C50CD2C0020F89C /* Item.swift in Sources */,
+				93C8B4D72C56390C0020F89C /* SessionLabels.swift in Sources */,
 				93C8B4CF2C51DFAA0020F89C /* TimerPage.swift in Sources */,
 				93C8B4B92C50CD2C0020F89C /* iStrain_ManagerApp.swift in Sources */,
 			);
