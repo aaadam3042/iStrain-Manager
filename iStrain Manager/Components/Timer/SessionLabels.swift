@@ -20,7 +20,7 @@ struct SessionLabels: View {
     }
     
     private func cyclesLeft(int: Int) -> Int {
-        var result = int - 1
+        let result = int - 1
         return result > 0 ? result : 0
     }
 }

@@ -26,7 +26,7 @@ class StateColours {
     }
 }
 
-let WORK_LENGTH: Int = (60 * 1);
+let WORK_LENGTH: Int = (60 * 20);
 let REST_LENGTH: Int = (20);
 let ACTIVE_LENGTH: Int = (60 * 5);
 
@@ -52,7 +52,7 @@ struct TimerPage: View {
         
         VStack {
             
-            // TODO: Add help here to explain cycle vs round
+            // TODO: Add audio/notif. Then do settings mngmnt. Then analytics. Should add back button in intermediary state
             SessionLabels(cycle: $cycle, tillActive: $roundsTillActive)
             
             Spacer()
@@ -73,7 +73,7 @@ struct TimerPage: View {
                             Text(pauseMessage).animation(.none)
                         })
                         .buttonStyle(.borderedProminent)
-                        .controlSize(.extraLarge)
+                        .controlSize(.large)
                         
                         Button(action: stopAction, label: {
                             Text("Stop")
@@ -82,7 +82,7 @@ struct TimerPage: View {
                         .buttonStyle(.borderedProminent)
                         .tint(.orange)
                         .disabled(isPaused ? false: true)
-                        .controlSize(.extraLarge)
+                        .controlSize(.large)
                     }.opacity(timerOver ? 0:1)
                 }
                 
@@ -93,14 +93,14 @@ struct TimerPage: View {
                         })
                         .buttonStyle(.borderedProminent)
                         .tint(.red)
-                        .controlSize(.extraLarge)
+                        .controlSize(.large)
                         
                         Button(action: getActive, label: {
                             Text("Get Active")
                         })
                         .buttonStyle(.borderedProminent)
                         .tint(.orange)
-                        .controlSize(.extraLarge)
+                        .controlSize(.large)
                         .disabled(roundsTillActive > 1)
                     }
                 }.opacity(timerOver ? 1:0)
@@ -119,7 +119,7 @@ struct TimerPage: View {
                 timerOver = true;
             }
         }
-        .onChange(of: scenePhase) {
+        .onChange(of: scenePhase) { _ in
             if scenePhase == .active {
                 isActive = true
             } else {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		93C8B4B92C50CD2C0020F89C /* iStrain_ManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4B82C50CD2C0020F89C /* iStrain_ManagerApp.swift */; };
 		93C8B4BB2C50CD2C0020F89C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4BA2C50CD2C0020F89C /* ContentView.swift */; };
-		93C8B4BD2C50CD2C0020F89C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4BC2C50CD2C0020F89C /* Item.swift */; };
 		93C8B4BF2C50CD2D0020F89C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C8B4BE2C50CD2D0020F89C /* Assets.xcassets */; };
 		93C8B4C22C50CD2D0020F89C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C8B4C12C50CD2D0020F89C /* Preview Assets.xcassets */; };
 		93C8B4CA2C51B25C0020F89C /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C8B4C92C51B25C0020F89C /* Header.swift */; };
@@ -23,7 +22,6 @@
 		93C8B4B52C50CD2C0020F89C /* iStrain Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iStrain Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C8B4B82C50CD2C0020F89C /* iStrain_ManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iStrain_ManagerApp.swift; sourceTree = "<group>"; };
 		93C8B4BA2C50CD2C0020F89C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		93C8B4BC2C50CD2C0020F89C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		93C8B4BE2C50CD2D0020F89C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93C8B4C12C50CD2D0020F89C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93C8B4C92C51B25C0020F89C /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				93C8B4C82C51B2450020F89C /* Components */,
 				93C8B4B82C50CD2C0020F89C /* iStrain_ManagerApp.swift */,
 				93C8B4BA2C50CD2C0020F89C /* ContentView.swift */,
-				93C8B4BC2C50CD2C0020F89C /* Item.swift */,
 				93C8B4BE2C50CD2D0020F89C /* Assets.xcassets */,
 				93C8B4C02C50CD2D0020F89C /* Preview Content */,
 			);
@@ -183,7 +180,6 @@
 				93C8B4CC2C51B43A0020F89C /* WelcomeBanner.swift in Sources */,
 				93C8B4BB2C50CD2C0020F89C /* ContentView.swift in Sources */,
 				93C8B4D42C56188C0020F89C /* ClockFace.swift in Sources */,
-				93C8B4BD2C50CD2C0020F89C /* Item.swift in Sources */,
 				93C8B4D72C56390C0020F89C /* SessionLabels.swift in Sources */,
 				93C8B4CF2C51DFAA0020F89C /* TimerPage.swift in Sources */,
 				93C8B4B92C50CD2C0020F89C /* iStrain_ManagerApp.swift in Sources */,
@@ -328,6 +324,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,6 +354,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
