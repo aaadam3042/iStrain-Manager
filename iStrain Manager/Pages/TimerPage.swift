@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AudioToolbox
 
 enum TimerState {
     case Work
@@ -108,7 +109,7 @@ struct TimerPage: View {
             
             Spacer()
         }
-        .background(StateColours.getColor(state: sessionState))
+        .background(timerOver ? Color.orange : StateColours.getColor(state: sessionState))
         .navigationBarBackButtonHidden(true)
         .onReceive(timer){ _ in
             guard isActive && !isPaused else {return}
@@ -116,6 +117,7 @@ struct TimerPage: View {
             if timeRemaining > 0 {
                 timeRemaining -= 1;
             } else if timeRemaining == 0 {
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 timerOver = true;
             }
         }
@@ -124,7 +126,7 @@ struct TimerPage: View {
                 isActive = true
             } else {
                 isActive = false
-            }
+            }   // TODO: Turning off phone freezes timer and cannot resume
         }
         .onAppear() {
             UIApplication.shared.isIdleTimerDisabled = true;

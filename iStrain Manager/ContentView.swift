@@ -29,9 +29,10 @@ struct ContentView: View {
                     NavigationLink {
                         EmptyView()
                     } label: {
-                        Label("Analytics", systemImage: "chart.bar.xaxis.ascending")
+                        Label("Analytics", systemImage: "chart.xyaxis.line")
                     } .simultaneousGesture(TapGesture().onEnded(pressedButton))
                         .buttonStyle(.bordered)
+                        .fixedSize()
                     
                     NavigationLink {
                         TimerPage()
